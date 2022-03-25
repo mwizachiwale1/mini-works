@@ -3,7 +3,7 @@ Author: Mwiza Chiwale
 Date created: 25/03/2022 06: 00 am
 Last modified: 25/03/22 06: 59 am
 
-This program searches for an integer x using the binary search algorithm in a list of integers sorted in ascending order and returns the position of x in the list if x has been found, if x is not present it returns 0.
+This program searches for an integer x using the binary search algorithm in an array of integers sorted in ascending order and returns the position of x in the list if x has been found, if x is not present it returns 0.
 The first position is given the index or location of zero, meaning counting locations starts from zeror "0" going up (e.g 0, 1, 2, ...)
 */
 import java.util.*;
@@ -14,8 +14,8 @@ class BinarySearch {
     }
     
     /*
-      The search method recieves two arguments/parameters: the 1st parameter is the integer you want to search for or look up, the 2nd argument is a list of integers where you want to find it in.
-      Note: This list must be a list of integers in ascending(increasing)* order, if not the function will crash
+      The search method recieves two arguments/parameters: the 1st parameter is the integer you want to search for or look up, the 2nd argument is an array of integers where you want to find it in.
+      Note: The array must be a list of integers in ascending(increasing)* order, if not the function will crash
     */
     public static int search(int lookUp, int[] in) {
         int leftEndPoint, rightEndPoint, midPoint, location;
