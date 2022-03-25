@@ -1,5 +1,5 @@
 # mini-works
 ## Hello there 👋
-###You're welcome to my repo.
-This repo contains some awesome small coding projects I have been working in different languages and frameworks.
-Feel free to use the code you like in any of your projects, and don't forget to give me a star .
+Welcome to my cool 😎 repo.
+Here you'll find some small coding projects I have been working in different languages and frameworks.
+Feel free to use the code in whatever way you like, and don't forget to give me a star .
