@@ -36,7 +36,7 @@ class BinarySearch {
             }
         }
         if (lookUp == in[leftEndPoint]) {
-            // wE add one (1) to the location because we want to give out the location in normal counting which is starting from 1 going up and not from 0.
+            /* We add one (1) to the location because we want to give out the location in normal counting which is starting from 1 going up and not from 0. */
             location = leftEndPoint + 1;
         } else {
             location = 0;
