@@ -5,6 +5,7 @@ Last modified: 25/03/22 06: 59 am
 
 This program searches for an integer x using the binary search algorithm in an array of integers sorted in ascending order and returns the position of x in the list if x has been found, if x is not present it returns 0.
 The first position is given the index or location of zero, meaning counting locations starts from zeror "0" going up (e.g 0, 1, 2, ...)
+But when producing the final output zero does not mean the first position it means that the number was not found, the first position is given the location of 1;
 */
 import java.util.*;
 class BinarySearch {
@@ -35,7 +36,8 @@ class BinarySearch {
             }
         }
         if (lookUp == in[leftEndPoint]) {
-            location = leftEndPoint;
+            // wE add one (1) to the location because we want to give out the location in normal counting which is starting from 1 going up and not from 0.
+            location = leftEndPoint + 1;
         } else {
             location = 0;
         }
