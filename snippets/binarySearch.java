@@ -1,47 +1,41 @@
 /* 
-Author: Mwiza Chiwale
-Date created: 25/03/2022 06: 00 am
-Last modified: 25/03/22 06: 59 am
-
-This program searches for an integer x using the binary search algorithm in an array of integers sorted in ascending order and returns the position of x in the list if x has been found, if x is not present it returns 0.
-The first position is given the index or location of zero, meaning counting locations starts from zeror "0" going up (e.g 0, 1, 2, ...)
-But when producing the final output zero does not mean the first position it means that the number was not found, the first position is given the location of 1;
+@Author: Mwiza Chiwale
+@Description: Program searches for an int x in an array of integers using binary search  
 */
 import java.util.*;
 class BinarySearch {
     // Main method
     public static void main(String[] args) {
-        // You can call the search method in here
+        Scanner input = new Scanner(System.in);
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println(numbers + " \n Please enter number to locate in the list:... ");
+        int lookUp = input.nextInt();
+        location = search(lookUp, numbers);
+        System.out.println(location);
     }
     
-    /*
-      The search method recieves two arguments/parameters: the 1st parameter is the integer you want to search for or look up, the 2nd argument is an array of integers where you want to find it in.
-      Note: The array must be a list of integers in ascending(increasing)* order, if not the function will crash
-    */
+    /* @param: 1st parameter = int you want to look up, 2nd parameter = list you you want to search in
+       @inavariant: lookUp must be an int & in must be an array
+       @pre: in[] must be sorted in ascending order
+             in.length > 2    
+       @post: return the location of the int in in[], from range 1 to n.length or 0 if lookUp is not in in[]   
+    */ 
     public static int search(int lookUp, int[] in) {
         int leftEndPoint, rightEndPoint, midPoint, location;
-        double midPointDouble; // Contains the mid point as a double
+        double midPointDouble;
         leftEndPoint = 0;
-        // Since we are starting from zero we set the right end point equal to one less the total number of elements in the list.
-        rightEndPoint = in.length - 1; 
+        rightEndPoint = in.length - 1; // array indexes start at 0, so reduce by 1 to compliment for this.
 
         while (leftEndPoint < rightEndPoint){
-            /* Dividing the sum of the left end point and right end point by 2 can result in a double so we store this value as the mid point in doouble format */
             midPointDouble = (leftEndPoint + rightEndPoint)/2;
-            midPoint = (int) Math.floor(midPointDouble); // we cast the mid point to an integer but first we round it off
+            midPoint = (int) Math.floor(midPointDouble); // cast to int
             if (lookUp > in[midPoint]) {
                 leftEndPoint = midPoint + 1;
             } else {
                 rightEndPoint = midPoint;
             }
         }
-        if (lookUp == in[leftEndPoint]) {
-            /* We add one (1) to the location because we want to give out the location in normal counting which is starting from 1 going up and not from 0. */
-            location = leftEndPoint + 1;
-        } else {
-            location = 0;
-        }
-        return location; // location is the position of the integer we are looking for, it is not present location we be 0
+        location = (lookUp == in[leftEndPoint]) ? (leftEndPoint + 1) : 0;
+        return location;
     }
 }
-
