@@ -8,7 +8,7 @@ class BinarySearch {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int[] numbers = {1, 2, 3, 4, 5, 6, 7};
-        System.out.println(numbers + " \n Please enter number to locate in the list:... ");
+        System.out.println("{1, 2, 3, 4, 5, 6, 7} \n Please enter number to locate in the list:... ");
         int lookUp = input.nextInt();
         location = search(lookUp, numbers);
         System.out.println(location);
