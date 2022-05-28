@@ -28,7 +28,7 @@ class DigitSeparator {
 			digitCount -= 1;
 			digit = digit % baseValue;
 			
-			System.out.print(individualDigit + " "); // Print out the individual digit
+			System.out.print(individualDigit + "   "); // Print out the individual digit
 			
 		} // end while
 
